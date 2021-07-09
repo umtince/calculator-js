@@ -52,6 +52,11 @@ clearButton.addEventListener("click", () => {
     display.textContent = "0";
 });
 
+const deleteButton = document.querySelector("#delete");
+deleteButton.addEventListener("click", () => {
+    selectedNum = selectedNum.substring(0, selectedNum.length-1);
+    display.textContent = selectedNum;
+});
 
 function add(x,y)
 {
