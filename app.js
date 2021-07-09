@@ -44,6 +44,7 @@ equalsButton.addEventListener("click", () => {
     selectedNum = result;
 });
 
+/* CLEARS DISPLAY AND VARIABLES*/ 
 const clearButton = document.querySelector("#clear");
 clearButton.addEventListener("click", () => {
     selectedNum2 = "";
@@ -52,6 +53,7 @@ clearButton.addEventListener("click", () => {
     display.textContent = "0";
 });
 
+/* DELETES THE MOST INSIGNIFICANT DIGIT AT ANY MOMENT OF THE CALCULATION*/ 
 const deleteButton = document.querySelector("#delete");
 deleteButton.addEventListener("click", () => {
     selectedNum = selectedNum.substring(0, selectedNum.length-1);
