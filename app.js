@@ -30,11 +30,31 @@ for(let i=0; i<numpadButtons.length; i++)
         {
             buttonDot.disabled = false;
         }
+
+        enableOperatorButtons();
     });
 }
 
 /*  INPUTS TO OPERATOR BUTTONS ARE RECORDED AND DISPLAYED */
 const operatorButtons = document.querySelectorAll(".operator");
+
+function enableOperatorButtons()
+{
+    for(let i=0; i<operatorButtons.length; i++)
+    {
+        operatorButtons[i].disabled = false;
+    }
+}
+
+function disableOperatorButtons()
+{
+    for(let i=0; i<operatorButtons.length; i++)
+    {
+        operatorButtons[i].disabled = true;
+    }
+}
+
+
 for(let i=0; i<operatorButtons.length; i++)
 {
     let operatorList = ['/', '*', '-', '+'];
@@ -46,6 +66,7 @@ for(let i=0; i<operatorButtons.length; i++)
         selectedNum2 = selectedNum;
         selectedNum = "";
 
+        disableOperatorButtons();
         buttonDot.disabled = false;
     });
 }
