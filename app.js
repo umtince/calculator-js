@@ -2,8 +2,6 @@ let selectedOperator;
 let selectedNum = "";
 let selectedNum2 = "";
 
-
-
 const display = document.querySelector("#display");
 
 /* INPUTS TO NUMPAD ARE RECORDED TO DISPLAY AND SAVED IN A VARIABLE*/
