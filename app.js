@@ -91,7 +91,7 @@ equalsButton.addEventListener("click", () => {
     
     let result = operate(selectedOperator,selectedNum2, selectedNum);
     display.textContent = result;
-    selectedNum = result;
+    selectedNum2 = result;
 });
 
 /* CLEARS DISPLAY AND VARIABLES*/ 
