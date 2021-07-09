@@ -54,6 +54,7 @@ function disableOperatorButtons()
     }
 }
 
+let counterOperator = 1;
 
 for(let i=0; i<operatorButtons.length; i++)
 {
@@ -63,9 +64,23 @@ for(let i=0; i<operatorButtons.length; i++)
     operatorButtons[i].addEventListener("click", () => {
         selectedOperator = operatorList[i];
         display.textContent = displayedOperatorList[i];
-        selectedNum2 = selectedNum;
-        selectedNum = "";
-
+        if(counterOperator % 2 != 0)
+        {
+            selectedNum2 = selectedNum;
+            selectedNum = "";
+            counterOperator++;
+        }
+        else
+        {
+            
+            let result = operate(selectedOperator,selectedNum2, selectedNum);
+            display.textContent = result;
+            selectedNum = result;
+            console.log(selectedOperator,selectedNum2,selectedNum);
+        
+        }
+        
+        
         disableOperatorButtons();
         buttonDot.disabled = false;
     });
@@ -89,6 +104,7 @@ clearButton.addEventListener("click", () => {
     selectedOperator = "";
     selectedNum = "";
     display.textContent = "0";
+    counterOperator = 1;
     buttonDot.disabled = false;
 });
 
