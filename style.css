@@ -88,6 +88,10 @@
     background-color: #2A6F97;
     color: white;
     font-size: 35px;
+    font-weight: bolder;
+    font-size: 24px;
+    border: 3px solid #012A4A;
+    border-radius: 50%;
 }
 
 .numpad:active, .operator:active{
