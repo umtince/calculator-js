@@ -26,13 +26,12 @@
     font-size: 55px;
     font-weight: bold;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #display{
-    margin-left: 320px;
+    
+    overflow: hidden;
+    direction: rtl;
 }
 
 #clear-delete{
