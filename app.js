@@ -86,22 +86,22 @@ deleteButton.addEventListener("click", () => {
 
 function add(x,y)
 {
-    return (+x)+(+y);
+    return Math.round(((+x)+(+y))*1000)/1000;
 }
 
 function substract(x,y)
 {
-    return (+x)-(+y);
+    return Math.round(((+x)-(+y))*1000)/1000;
 }
 
 function multiply(x,y)
 {
-    return (+x)*(+y);
+    return Math.round(((+x)*(+y))*1000)/1000;
 }
 
 function divide(x,y)
 {
-    return (+x)/(+y);
+    return Math.round(((+x)/(+y))*1000)/1000;
 }
 
 function operate(operator,num1,num2)
