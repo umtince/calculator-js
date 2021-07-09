@@ -1,6 +1,6 @@
 let selectedOperator;
 let selectedNum = "";
-let selectedNum2;
+let selectedNum2 = "";
 
 
 
@@ -28,7 +28,8 @@ for(let i=0; i<operatorButtons.length; i++)
     operatorButtons[i].addEventListener("click", () => {
         selectedOperator = operatorList[i];
         display.textContent = displayedOperatorList[i];
-        
+        selectedNum2 = selectedNum;
+        selectedNum = "";
     });
 }
 
@@ -37,8 +38,18 @@ const equalsButton = document.querySelector("#btn-equals");
 equalsButton.addEventListener("click", () => {
     console.log("selectednum = ",selectedNum);
     console.log("selectedope= ",selectedOperator);
-    display.textContent = operate(selectedOperator,selectedNum, selectedNum);
-    console.log("fasda");
+
+    let result = operate(selectedOperator,selectedNum2, selectedNum);
+    display.textContent = result;
+    selectedNum = result;
+});
+
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", () => {
+    selectedNum2 = "";
+    selectedOperator = "";
+    selectedNum = "";
+    display.textContent = "0";
 });
 
 
