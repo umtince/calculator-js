@@ -62,24 +62,23 @@ for(let i=0; i<operatorButtons.length; i++)
     let displayedOperatorList = ['÷', '×', '-', '+'];
 
     operatorButtons[i].addEventListener("click", () => {
-        selectedOperator = operatorList[i];
+        
         display.textContent = displayedOperatorList[i];
         if(counterOperator % 2 != 0)
         {
+            selectedOperator = operatorList[i];
             selectedNum2 = selectedNum;
             selectedNum = "";
             counterOperator++;
         }
         else
-        {
-            
+        {  
             let result = operate(selectedOperator,selectedNum2, selectedNum);
             display.textContent = result;
-            selectedNum = result;
-            console.log(selectedOperator,selectedNum2,selectedNum);
-        
+            selectedNum2 = result;
+            selectedNum = "";  
         }
-        
+        selectedOperator = operatorList[i];
         
         disableOperatorButtons();
         buttonDot.disabled = false;
@@ -89,9 +88,7 @@ for(let i=0; i<operatorButtons.length; i++)
 /* WHEN CLICKED ON EQUAL BUTTON EQUATION IS EVALUATED AND RESULT IS DISPLAYED*/
 const equalsButton = document.querySelector("#btn-equals");
 equalsButton.addEventListener("click", () => {
-    console.log("selectednum = ",selectedNum);
-    console.log("selectedope= ",selectedOperator);
-
+    
     let result = operate(selectedOperator,selectedNum2, selectedNum);
     display.textContent = result;
     selectedNum = result;
