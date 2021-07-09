@@ -3,7 +3,19 @@ let selectedNum = "";
 let selectedNum2 = "";
 
 const display = document.querySelector("#display");
+const buttonDot = document.querySelector("#dot");
 
+buttonDot.addEventListener("click",() =>{
+    if(selectedNum.search('.') < 0)
+        {
+            buttonDot.disabled = false;
+        }
+        else
+        {
+            buttonDot.disabled = true;
+        }
+    
+});
 /* INPUTS TO NUMPAD ARE RECORDED TO DISPLAY AND SAVED IN A VARIABLE*/
 const numpadButtons = document.querySelectorAll(".numpad");
 for(let i=0; i<numpadButtons.length; i++)
@@ -13,6 +25,11 @@ for(let i=0; i<numpadButtons.length; i++)
     numpadButtons[i].addEventListener("click", () => {
         selectedNum += numpadList[i];
         display.textContent = selectedNum;
+
+        if(selectedNum.search('.') < 0)
+        {
+            buttonDot.disabled = false;
+        }
     });
 }
 
@@ -28,6 +45,8 @@ for(let i=0; i<operatorButtons.length; i++)
         display.textContent = displayedOperatorList[i];
         selectedNum2 = selectedNum;
         selectedNum = "";
+
+        buttonDot.disabled = false;
     });
 }
 
@@ -49,13 +68,20 @@ clearButton.addEventListener("click", () => {
     selectedOperator = "";
     selectedNum = "";
     display.textContent = "0";
+    buttonDot.disabled = false;
 });
 
 /* DELETES THE MOST INSIGNIFICANT DIGIT AT ANY MOMENT OF THE CALCULATION*/ 
 const deleteButton = document.querySelector("#delete");
 deleteButton.addEventListener("click", () => {
+    
     selectedNum = selectedNum.substring(0, selectedNum.length-1);
     display.textContent = selectedNum;
+
+    if(selectedNum.includes('.') === false)
+    {
+        buttonDot.disabled = false;
+    }
 });
 
 function add(x,y)
