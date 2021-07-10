@@ -30,7 +30,7 @@
 
 #display{
     overflow: hidden;
-    direction: rtl;
+    text-align: right;
 }
 
 #clear-delete{
